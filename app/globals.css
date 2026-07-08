@@ -952,3 +952,39 @@ section {
   outline: none;
   border-color: var(--lime);
 }
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 900px) {
+  .detail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.detail-col h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.detail-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.detail-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-dim);
+  font-size: 14.5px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.detail-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--lime);
+  border-radius: 3px;
+}

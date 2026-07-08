@@ -1,7 +1,7 @@
 import TrajectoryLine from "../components/TrajectoryLine";
 import Faq from "../components/Faq";
 import { IconCart } from "../components/ServiceIcons";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, site } from "@/lib/site";
 
 export const metadata = {
   title: "Criação de Loja Virtual | Desenvolvimento de E-commerce Profissional",
@@ -46,8 +46,29 @@ const faqItems = [
 ];
 
 export default function LojasVirtuais() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Criação de Loja Virtual (E-commerce)",
+    provider: { "@type": "Organization", name: "PixelRise", url: site.domain },
+    areaServed: "BR",
+    description:
+      "Desenvolvimento de e-commerce com checkout otimizado, integrações de pagamento e frete, focado em conversão.",
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="hero">
         <div className="container">
           <div className="service-icon-badge reveal"><IconCart size={40} /></div>

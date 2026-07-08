@@ -1,7 +1,7 @@
 import TrajectoryLine from "../components/TrajectoryLine";
 import Faq from "../components/Faq";
 import { IconAds } from "../components/ServiceIcons";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, site } from "@/lib/site";
 
 export const metadata = {
   title: "Gestão de Tráfego Pago | Google Ads e Meta Ads para Empresas",
@@ -46,8 +46,29 @@ const faqItems = [
 ];
 
 export default function GestaoDeTrafegoPago() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Gestão de Tráfego Pago",
+    provider: { "@type": "Organization", name: "PixelRise", url: site.domain },
+    areaServed: "BR",
+    description:
+      "Gestão de campanhas de Google Ads e Meta Ads com otimização contínua de CPC, CPA e ROAS.",
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="hero">
         <div className="container">
           <div className="service-icon-badge reveal"><IconAds size={40} /></div>

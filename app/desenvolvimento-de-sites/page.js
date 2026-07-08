@@ -1,7 +1,7 @@
 import TrajectoryLine from "../components/TrajectoryLine";
 import Faq from "../components/Faq";
 import { IconSite } from "../components/ServiceIcons";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, site } from "@/lib/site";
 
 export const metadata = {
   title: "Criação de Sites Profissionais | Desenvolvimento de Sites para Empresas",
@@ -46,8 +46,29 @@ const faqItems = [
 ];
 
 export default function DesenvolvimentoDeSites() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Criação de Sites Profissionais",
+    provider: { "@type": "Organization", name: "PixelRise", url: site.domain },
+    areaServed: "BR",
+    description:
+      "Criação de sites profissionais, responsivos e otimizados para SEO, focados em gerar contato e vendas.",
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="hero">
         <div className="container">
           <div className="service-icon-badge reveal"><IconSite size={40} /></div>

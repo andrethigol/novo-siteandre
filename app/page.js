@@ -4,6 +4,7 @@ import ServiceCard from "./components/ServiceCard";
 import Stats from "./components/Stats";
 import Faq from "./components/Faq";
 import HeroIllustration from "./components/HeroIllustration";
+import ContactForm from "./components/ContactForm";
 import { IconSite, IconCart, IconAds } from "./components/ServiceIcons";
 import { whatsappLink } from "@/lib/site";
 
@@ -20,7 +21,7 @@ const faqItems = [
     a: "O investimento varia conforme a complexidade do projeto (site institucional, landing page ou e-commerce). Fazemos um diagnóstico gratuito e enviamos uma proposta personalizada em até 24h.",
   },
   {
-    q: "Vocês atendem empresas fora de Curitiba?",
+    q: "Vocês atendem empresas de outros estados?",
     a: "Sim. O atendimento da PixelRise é 100% remoto e cobre todo o Brasil — do diagnóstico ao suporte pós-entrega, tudo acontece online.",
   },
   {
@@ -38,8 +39,25 @@ const faqItems = [
 ];
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="hero">
         <div className="hero-glow" />
         <div className="container">
@@ -134,15 +152,86 @@ export default function Home() {
 
       <section style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="founder-card reveal">
-            <div className="founder-avatar">PR</div>
-            <div style={{ flex: 1, minWidth: 240 }}>
-              <p className="founder-quote">
-                &ldquo;A gente entende a insegurança de investir em marketing digital sem saber se vai
-                voltar. Por isso, cada projeto começa com diagnóstico gratuito e todo relatório é
-                aberto — você acompanha exatamente para onde seu investimento está indo.&rdquo;
+          <div className="eyebrow">Em detalhes</div>
+          <h2 className="section-title reveal">O que entregamos em cada frente</h2>
+          <p className="section-sub reveal">
+            Sem enrolação: aqui está exatamente o que está incluso em cada serviço.
+          </p>
+          <div className="detail-grid">
+            <div className="detail-col reveal">
+              <div className="card-icon"><IconSite /></div>
+              <h3>Desenvolvimento de Sites</h3>
+              <ul className="detail-list">
+                <li>Design exclusivo para sua marca</li>
+                <li>100% responsivo (celular, tablet, desktop)</li>
+                <li>SEO técnico incluso desde o primeiro dia</li>
+                <li>Integração direta com WhatsApp</li>
+                <li>Painel simples de edição de conteúdo</li>
+              </ul>
+              <Link href="/desenvolvimento-de-sites" className="btn-ghost" style={{ position: "relative", display: "inline-flex", marginTop: 8 }}>
+                Ver detalhes completos<span className="underline" />
+              </Link>
+            </div>
+            <div className="detail-col reveal">
+              <div className="card-icon"><IconCart /></div>
+              <h3>Lojas Virtuais</h3>
+              <ul className="detail-list">
+                <li>Catálogo de produtos sem limite</li>
+                <li>Pagamento via cartão, Pix e boleto</li>
+                <li>Cálculo automático de frete</li>
+                <li>Checkout otimizado contra abandono</li>
+                <li>SEO para páginas de produto</li>
+              </ul>
+              <Link href="/lojas-virtuais" className="btn-ghost" style={{ position: "relative", display: "inline-flex", marginTop: 8 }}>
+                Ver detalhes completos<span className="underline" />
+              </Link>
+            </div>
+            <div className="detail-col reveal">
+              <div className="card-icon"><IconAds /></div>
+              <h3>Gestão de Tráfego Pago</h3>
+              <ul className="detail-list">
+                <li>Google Ads (Search, Shopping, Performance Max)</li>
+                <li>Meta Ads (Facebook e Instagram)</li>
+                <li>Otimização contínua de CPC, CPA e ROAS</li>
+                <li>Retargeting para visitantes que não converteram</li>
+                <li>Relatórios claros de investimento e retorno</li>
+              </ul>
+              <Link href="/gestao-de-trafego-pago" className="btn-ghost" style={{ position: "relative", display: "inline-flex", marginTop: 8 }}>
+                Ver detalhes completos<span className="underline" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="grid-2">
+            <div className="founder-card reveal" style={{ margin: 0 }}>
+              <div className="founder-avatar">PR</div>
+              <div style={{ flex: 1, minWidth: 240 }}>
+                <p className="founder-quote">
+                  &ldquo;A gente entende a insegurança de investir em marketing digital sem saber se
+                  vai voltar. Por isso, cada projeto começa com diagnóstico gratuito e todo
+                  relatório é aberto — você acompanha exatamente para onde seu investimento está
+                  indo.&rdquo;
+                </p>
+                <div className="founder-name">EQUIPE PIXELRISE — ATENDIMENTO 100% REMOTO, TODO O BRASIL</div>
+              </div>
+            </div>
+            <div className="reveal">
+              <div className="eyebrow">Quem somos</div>
+              <h2 className="section-title" style={{ marginBottom: 16 }}>
+                Uma equipe pequena, focada em poucos clientes por vez
+              </h2>
+              <p className="section-sub" style={{ marginBottom: 24 }}>
+                Não somos uma fábrica de sites. Trabalhamos com um número limitado de parceiros
+                simultaneamente pra garantir atenção real a cada projeto — do diagnóstico inicial
+                ao acompanhamento pós-entrega.
               </p>
-              <div className="founder-name">EQUIPE PIXELRISE — ATENDIMENTO 100% REMOTO, TODO O BRASIL</div>
+              <Link href="/sobre" className="btn btn-secondary">
+                Conhecer a equipe e a história
+              </Link>
             </div>
           </div>
         </div>
@@ -201,6 +290,26 @@ export default function Home() {
           <h2 className="section-title reveal">Perguntas frequentes</h2>
           <p className="section-sub reveal">Tudo o que você precisa saber antes de começar seu projeto.</p>
           <Faq items={faqItems} />
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="grid-2">
+            <div className="reveal">
+              <div className="eyebrow">Fale com a gente</div>
+              <h2 className="section-title" style={{ marginBottom: 16 }}>
+                Prefere preencher um formulário a chamar no WhatsApp?
+              </h2>
+              <p className="section-sub" style={{ marginBottom: 0 }}>
+                Sem problema — escolha o canal que for mais confortável pra você. Respondemos os
+                dois com a mesma prioridade, geralmente em até 1 dia útil.
+              </p>
+            </div>
+            <div className="card reveal" style={{ cursor: "default", padding: "32px 28px" }}>
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
 
