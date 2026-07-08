@@ -1,8 +1,9 @@
 import Link from "next/link";
 
-export default function ServiceCard({ tag, title, description, href }) {
+export default function ServiceCard({ tag, title, description, href, icon }) {
   return (
     <Link href={href} className="card reveal">
+      {icon && <div className="card-icon">{icon}</div>}
       <div className="card-tag">{tag}</div>
       <h3>{title}</h3>
       <p>{description}</p>

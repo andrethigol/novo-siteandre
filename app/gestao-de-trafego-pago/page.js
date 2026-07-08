@@ -1,5 +1,6 @@
 import TrajectoryLine from "../components/TrajectoryLine";
 import Faq from "../components/Faq";
+import { IconAds } from "../components/ServiceIcons";
 import { whatsappLink } from "@/lib/site";
 
 export const metadata = {
@@ -49,6 +50,7 @@ export default function GestaoDeTrafegoPago() {
     <>
       <section className="hero">
         <div className="container">
+          <div className="service-icon-badge reveal"><IconAds size={40} /></div>
           <div className="eyebrow">Serviço · Performance</div>
           <h1>
             Tráfego pago gerido para <em>gerar leads</em>, não só cliques.

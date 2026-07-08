@@ -1,5 +1,6 @@
 import TrajectoryLine from "../components/TrajectoryLine";
 import Faq from "../components/Faq";
+import { IconSite } from "../components/ServiceIcons";
 import { whatsappLink } from "@/lib/site";
 
 export const metadata = {
@@ -49,6 +50,7 @@ export default function DesenvolvimentoDeSites() {
     <>
       <section className="hero">
         <div className="container">
+          <div className="service-icon-badge reveal"><IconSite size={40} /></div>
           <div className="eyebrow">Serviço · Criação de Sites</div>
           <h1>
             Sites profissionais que <em>trazem contato</em>, não só visita.

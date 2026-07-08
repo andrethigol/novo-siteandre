@@ -1,5 +1,6 @@
 import TrajectoryLine from "../components/TrajectoryLine";
 import Faq from "../components/Faq";
+import { IconCart } from "../components/ServiceIcons";
 import { whatsappLink } from "@/lib/site";
 
 export const metadata = {
@@ -49,6 +50,7 @@ export default function LojasVirtuais() {
     <>
       <section className="hero">
         <div className="container">
+          <div className="service-icon-badge reveal"><IconCart size={40} /></div>
           <div className="eyebrow">Serviço · E-commerce</div>
           <h1>
             Lojas virtuais estruturadas para <em>vender de verdade.</em>

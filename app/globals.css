@@ -779,12 +779,66 @@ section {
   color: var(--text);
   margin-bottom: 14px;
 }
+.card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+}
+.service-icon-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+.hero-illustration {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 959px) {
+  .hero-illustration {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
 .founder-name {
   font-family: var(--mono);
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-dim);
+}
+
+.light-section .card {
+  background: #ffffff;
+  border-color: var(--line-light);
+}
+.light-section .card p,
+.light-section .card-tag {
+  color: #5c5f55;
+}
+.light-section .card:hover {
+  border-color: #12140f;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.12);
+}
+.light-section .card::before {
+  background: #12140f;
 }
 
 .portfolio-card {

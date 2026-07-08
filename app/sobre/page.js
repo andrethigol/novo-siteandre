@@ -26,9 +26,45 @@ const testimonials = [
   },
 ];
 
-const portfolio = [
-  { name: "Porcelana Schmidt", tag: "Branding · Identidade Visual" },
-  { name: "PS Iluminação Automotiva", tag: "Site · Campanha de Tráfego Pago" },
+const differentiators = [
+  {
+    title: "Diagnóstico antes de vender",
+    text: "Não empurramos pacote fechado. Entendemos seu momento de negócio antes de propor qualquer solução.",
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <circle cx="20" cy="20" r="12" stroke="#D4FF8E" strokeWidth="2" />
+        <path d="M29 29l8 8" stroke="#D4FF8E" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Relatório aberto, sem enrolação",
+    text: "Você acompanha exatamente para onde o investimento está indo — sem jargão pra esconder resultado fraco.",
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <rect x="8" y="6" width="28" height="32" rx="3" stroke="#D4FF8E" strokeWidth="2" />
+        <path d="M15 16h14M15 23h14M15 30h8" stroke="#D4FF8E" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Atendimento direto",
+    text: "Você fala com quem executa o projeto, não com um atendente que só repassa mensagem.",
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <path d="M8 30V14a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H18l-8 8Z" stroke="#D4FF8E" strokeWidth="2" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Foco em métrica, não em vaidade",
+    text: "CPC, CPA, ROAS e taxa de conversão guiam as decisões — não curtidas ou alcance sem propósito.",
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+        <path d="M6 34V22m10 12V14m10 20V26m10 8V10" stroke="#D4FF8E" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Sobre() {
@@ -72,23 +108,17 @@ export default function Sobre() {
 
       <section className="light-section">
         <div className="container">
-          <div className="eyebrow">Portfólio</div>
-          <h2 className="section-title reveal">Alguns projetos recentes</h2>
+          <div className="eyebrow">Diferenciais</div>
+          <h2 className="section-title reveal">O que muda quando você trabalha com a gente</h2>
           <p className="section-sub reveal">
-            Cada projeto é uma estratégia única, pensada para o momento de negócio do cliente.
+            Sem portfólio genérico de prateleira — o que importa é como cada projeto é conduzido.
           </p>
           <div className="card-grid">
-            {portfolio.map((p) => (
-              <div className="portfolio-card reveal" key={p.name}>
-                <div className="portfolio-thumb">{p.name.split(" ")[0]}</div>
-                <div className="portfolio-body">
-                  <h3 style={{ fontSize: 19, marginBottom: 6 }}>{p.name}</h3>
-                  <div className="tag-row">
-                    {p.tag.split(" · ").map((t) => (
-                      <span className="tag-pill" key={t}>{t}</span>
-                    ))}
-                  </div>
-                </div>
+            {differentiators.map((d) => (
+              <div className="card reveal" key={d.title} style={{ cursor: "default" }}>
+                <div className="card-icon">{d.icon}</div>
+                <h3>{d.title}</h3>
+                <p style={{ marginBottom: 0 }}>{d.text}</p>
               </div>
             ))}
           </div>

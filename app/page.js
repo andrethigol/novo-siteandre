@@ -3,6 +3,8 @@ import TrajectoryLine from "./components/TrajectoryLine";
 import ServiceCard from "./components/ServiceCard";
 import Stats from "./components/Stats";
 import Faq from "./components/Faq";
+import HeroIllustration from "./components/HeroIllustration";
+import { IconSite, IconCart, IconAds } from "./components/ServiceIcons";
 import { whatsappLink } from "@/lib/site";
 
 export const metadata = {
@@ -41,35 +43,42 @@ export default function Home() {
       <section className="hero">
         <div className="hero-glow" />
         <div className="container">
-          <div className="eyebrow">Agência de Marketing Digital · Todo o Brasil</div>
-          <h1>
-            Criação de sites e gestão de tráfego pago <em>com foco em resultado.</em>
-          </h1>
-          <p className="lead">
-            Desenvolvemos sites profissionais, lojas virtuais e campanhas de tráfego pago
-            desenhadas para transformar visitantes em clientes — não só para ficarem bonitos.
-          </p>
-          <div className="hero-actions">
-            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Solicitar orçamento
-            </a>
-            <Link href="/sobre" className="btn btn-secondary">
-              Conhecer a PixelRise
-            </Link>
-          </div>
-          <div className="trust-badges reveal">
-            <span className="trust-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
-              Diagnóstico inicial gratuito
-            </span>
-            <span className="trust-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
-              Atendimento direto, sem intermediários
-            </span>
-            <span className="trust-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
-              Acompanhamento por métricas reais
-            </span>
+          <div className="hero-grid">
+            <div>
+              <div className="eyebrow">Agência de Marketing Digital · Todo o Brasil</div>
+              <h1>
+                Criação de sites e gestão de tráfego pago <em>com foco em resultado.</em>
+              </h1>
+              <p className="lead">
+                Desenvolvemos sites profissionais, lojas virtuais e campanhas de tráfego pago
+                desenhadas para transformar visitantes em clientes — não só para ficarem bonitos.
+              </p>
+              <div className="hero-actions">
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                  Solicitar orçamento
+                </a>
+                <Link href="/sobre" className="btn btn-secondary">
+                  Conhecer a PixelRise
+                </Link>
+              </div>
+              <div className="trust-badges reveal">
+                <span className="trust-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+                  Diagnóstico inicial gratuito
+                </span>
+                <span className="trust-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+                  Atendimento direto, sem intermediários
+                </span>
+                <span className="trust-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+                  Acompanhamento por métricas reais
+                </span>
+              </div>
+            </div>
+            <div className="hero-illustration reveal">
+              <HeroIllustration />
+            </div>
           </div>
           <TrajectoryLine labels={["Diagnóstico", "Estratégia", "Execução", "Otimização contínua"]} />
         </div>
@@ -99,18 +108,21 @@ export default function Home() {
           </p>
           <div className="card-grid">
             <ServiceCard
+              icon={<IconSite />}
               tag="SERVIÇO / SITES"
               title="Desenvolvimento de Sites"
               description="Sites institucionais rápidos, responsivos e otimizados para SEO — construídos para gerar contato e autoridade."
               href="/desenvolvimento-de-sites"
             />
             <ServiceCard
+              icon={<IconCart />}
               tag="SERVIÇO / E-COMMERCE"
               title="Lojas Virtuais"
               description="Estrutura de e-commerce pronta para vender, com foco em conversão, escala e experiência de compra."
               href="/lojas-virtuais"
             />
             <ServiceCard
+              icon={<IconAds />}
               tag="SERVIÇO / PERFORMANCE"
               title="Gestão de Tráfego Pago"
               description="Google Ads e Meta Ads geridos com otimização contínua de CPC, CPA e ROAS."
