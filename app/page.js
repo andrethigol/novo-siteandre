@@ -39,6 +39,7 @@ export default function Home() {
   return (
     <>
       <section className="hero">
+        <div className="hero-glow" />
         <div className="container">
           <div className="eyebrow">Agência de Marketing Digital · Todo o Brasil</div>
           <h1>
@@ -55,6 +56,20 @@ export default function Home() {
             <Link href="/sobre" className="btn btn-secondary">
               Conhecer a PixelRise
             </Link>
+          </div>
+          <div className="trust-badges reveal">
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+              Diagnóstico inicial gratuito
+            </span>
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+              Atendimento direto, sem intermediários
+            </span>
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+              Acompanhamento por métricas reais
+            </span>
           </div>
           <TrajectoryLine labels={["Diagnóstico", "Estratégia", "Execução", "Otimização contínua"]} />
         </div>
@@ -101,6 +116,22 @@ export default function Home() {
               description="Google Ads e Meta Ads geridos com otimização contínua de CPC, CPA e ROAS."
               href="/gestao-de-trafego-pago"
             />
+          </div>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="founder-card reveal">
+            <div className="founder-avatar">PR</div>
+            <div style={{ flex: 1, minWidth: 240 }}>
+              <p className="founder-quote">
+                &ldquo;A gente entende a insegurança de investir em marketing digital sem saber se vai
+                voltar. Por isso, cada projeto começa com diagnóstico gratuito e todo relatório é
+                aberto — você acompanha exatamente para onde seu investimento está indo.&rdquo;
+              </p>
+              <div className="founder-name">EQUIPE PIXELRISE — ATENDIMENTO 100% REMOTO, TODO O BRASIL</div>
+            </div>
           </div>
         </div>
       </section>
