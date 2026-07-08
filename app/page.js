@@ -216,7 +216,7 @@ export default function Home() {
                   relatório é aberto — você acompanha exatamente para onde seu investimento está
                   indo.&rdquo;
                 </p>
-                <div className="founder-name">EQUIPE PIXELRISE — ATENDIMENTO 100% REMOTO, TODO O BRASIL</div>
+                <div className="founder-name">ANDRÉ LIRA — CEO, PIXELRISE</div>
               </div>
             </div>
             <div className="reveal">
