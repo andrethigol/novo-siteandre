@@ -1,10 +1,13 @@
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { Suspense } from "react";
+import Analytics from "./components/Analytics";
 import Footer from "./components/Footer";
 import WhatsappFloat from "./components/WhatsappFloat";
 import ScrollReveal from "./components/ScrollReveal";
 import { site } from "@/lib/site";
+
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -88,6 +91,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable}`}>
       <body>
+         <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
