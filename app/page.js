@@ -208,7 +208,7 @@ export default function Home() {
         <div className="container">
           <div className="grid-2">
             <div className="founder-card reveal" style={{ margin: 0 }}>
-              <div className="founder-avatar">PR</div>
+              <div className="founder-avatar">AL</div>
               <div style={{ flex: 1, minWidth: 240 }}>
                 <p className="founder-quote">
                   &ldquo;A gente entende a insegurança de investir em marketing digital sem saber se
