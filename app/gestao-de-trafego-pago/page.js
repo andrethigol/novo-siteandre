@@ -89,7 +89,7 @@ export default function GestaoDeTrafegoPago() {
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <section>
         <div className="container">
           <div className="eyebrow">O que está incluso</div>
           <h2 className="section-title reveal">Gestão completa, do clique à conversão</h2>

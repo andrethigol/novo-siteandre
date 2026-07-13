@@ -89,7 +89,7 @@ export default function DesenvolvimentoDeSites() {
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <section>
         <div className="container">
           <div className="eyebrow">O que está incluso</div>
           <h2 className="section-title reveal">Um site completo, não uma página solta</h2>

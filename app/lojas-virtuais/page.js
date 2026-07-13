@@ -89,7 +89,7 @@ export default function LojasVirtuais() {
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <section>
         <div className="container">
           <div className="eyebrow">O que está incluso</div>
           <h2 className="section-title reveal">Tudo o que uma loja virtual precisa para vender</h2>

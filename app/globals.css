@@ -988,3 +988,104 @@ section {
   border: 1.5px solid var(--lime);
   border-radius: 3px;
 }
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: var(--lime);
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee-scroll 26s linear infinite;
+  width: max-content;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  color: #0d0d0d;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.marquee-star {
+  color: #0d0d0d;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+.trajectory-title {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+.banner-carousel {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--line);
+  padding: 64px 0;
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .banner-carousel {
+    padding: 90px 0;
+  }
+}
+.banner-slide {
+  max-width: 640px;
+  animation: banner-fade 0.5s ease;
+}
+@keyframes banner-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .banner-slide {
+    animation: none;
+  }
+}
+.banner-title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 12px;
+}
+.banner-text {
+  color: var(--text-dim);
+  font-size: 15.5px;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+.banner-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 32px;
+}
+.banner-dot {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+.banner-dot.active {
+  background: var(--lime);
+}

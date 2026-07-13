@@ -84,7 +84,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <section>
         <div className="container">
           <div className="grid-2">
             <div>

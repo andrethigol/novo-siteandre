@@ -1,10 +1,11 @@
 import Link from "next/link";
-import TrajectoryLine from "./components/TrajectoryLine";
 import ServiceCard from "./components/ServiceCard";
 import Stats from "./components/Stats";
 import Faq from "./components/Faq";
 import HeroIllustration from "./components/HeroIllustration";
 import ContactForm from "./components/ContactForm";
+import MarqueeBand from "./components/MarqueeBand";
+import BannerCarousel from "./components/BannerCarousel";
 import { IconSite, IconCart, IconAds } from "./components/ServiceIcons";
 import { whatsappLink } from "@/lib/site";
 
@@ -35,6 +36,29 @@ const faqItems = [
   {
     q: "Quanto tempo leva para meu site ficar pronto?",
     a: "Sites institucionais costumam ficar prontos entre 15 e 25 dias úteis. Lojas virtuais, entre 25 e 40 dias, dependendo do catálogo de produtos e integrações necessárias.",
+  },
+];
+
+const benefitsItems = [
+  {
+    q: "Um único parceiro pra tudo, sem culpa cruzada",
+    a: "Quando o site e o tráfego pago são de fornecedores diferentes, cada um culpa o outro se o resultado não vem. Com um parceiro só cuidando dos dois, a responsabilidade pelo resultado fica clara.",
+  },
+  {
+    q: "Decisão baseada em dado, não em achismo",
+    a: "Toda escolha de campanha, criativo ou ajuste de site é guiada por métrica real — CPC, CPA, ROAS, taxa de conversão — não por 'feeling' de quem está gerindo.",
+  },
+  {
+    q: "Você não precisa aprender a ferramenta",
+    a: "Google Ads, Meta Ads, SEO técnico — são áreas que mudam toda semana. Uma agência especializada acompanha essas mudanças pra você não precisar.",
+  },
+  {
+    q: "Suporte contínuo, não só entrega e adeus",
+    a: "Muito freelancer entrega o site e desaparece. Uma agência estruturada continua acompanhando, ajustando e otimizando depois do lançamento.",
+  },
+  {
+    q: "Estratégia adaptada ao seu momento, não pacote genérico",
+    a: "O que funciona pra uma loja com R$5.000 de verba mensal não é o mesmo que funciona pra uma com R$500. A estratégia certa começa entendendo seu momento real de negócio.",
   },
 ];
 
@@ -98,15 +122,18 @@ export default function Home() {
               <HeroIllustration />
             </div>
           </div>
-          <TrajectoryLine labels={["Diagnóstico", "Estratégia", "Execução", "Otimização contínua"]} />
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <MarqueeBand />
+
+      <BannerCarousel />
+
+      <section>
         <div className="container">
           <div className="eyebrow">Por que investir em performance digital</div>
           <h2 className="section-title reveal">
-            A maioria dos sites é bonita, mas não vende. A gente resolve isso.
+            A maioria dos sites é bonito, mas não vende. A gente resolve isso.
           </h2>
           <p className="section-sub reveal">
             Na PixelRise, cada site, loja virtual ou campanha é pensado para gerar leads e vendas
@@ -150,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <section>
         <div className="container">
           <div className="eyebrow">Em detalhes</div>
           <h2 className="section-title reveal">O que entregamos em cada frente</h2>
@@ -204,7 +231,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section style={{ paddingTop: 0 }}>
+      <section>
         <div className="container">
           <div className="grid-2">
             <div className="founder-card reveal" style={{ margin: 0 }}>
@@ -281,6 +308,17 @@ export default function Home() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="eyebrow">Por que uma agência, e não freelancer solto</div>
+          <h2 className="section-title reveal">Benefícios de contratar uma agência sólida</h2>
+          <p className="section-sub reveal">
+            Não é sobre ser maior — é sobre ter estrutura, conhecimento e continuidade.
+          </p>
+          <Faq items={benefitsItems} />
         </div>
       </section>
 
