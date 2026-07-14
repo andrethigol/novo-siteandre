@@ -1,5 +1,6 @@
-import TrajectoryLine from "../components/TrajectoryLine";
+import Link from "next/link";
 import Faq from "../components/Faq";
+import PromoStrip from "../components/PromoStrip";
 import { IconSite } from "../components/ServiceIcons";
 import { whatsappLink, site } from "@/lib/site";
 
@@ -14,16 +15,26 @@ export const metadata = {
     "criar site institucional",
     "site responsivo otimizado para seo",
     "landing page de alta conversão",
+    "quanto custa um site profissional",
   ],
 };
 
+const signals = [
+  "Seu site atual foi feito há mais de 3 anos e já parece datado",
+  "Você recebe visita mas quase nenhum contato pelo site",
+  "Não sabe dizer se o site aparece no Google pras buscas do seu negócio",
+  "Depende de outra pessoa pra fazer qualquer alteração simples",
+  "Não sabe se o site carrega rápido no celular",
+  "Ainda não tem site e está perdendo cliente pra quem tem",
+];
+
 const includes = [
-  { title: "Design exclusivo", desc: "Layout desenvolvido para a sua marca — nada de templates genéricos." },
-  { title: "100% responsivo", desc: "Perfeito em celular, tablet e desktop, com performance de carregamento otimizada." },
-  { title: "SEO técnico incluso", desc: "Estrutura, meta tags, dados estruturados e velocidade pensados para o Google desde o primeiro dia." },
-  { title: "Integração com WhatsApp", desc: "Botões e formulários conectados direto ao seu atendimento comercial." },
-  { title: "Painel de fácil edição", desc: "Você consegue atualizar textos e imagens sem depender de programador." },
-  { title: "Suporte pós-entrega", desc: "Acompanhamento após o lançamento para ajustes e evolução contínua." },
+  { title: "Design exclusivo", desc: "Layout desenvolvido com base no seu posicionamento e público — nada de template genérico reaproveitado." },
+  { title: "100% responsivo", desc: "Testado em celular, tablet e desktop antes da entrega, com atenção especial à experiência mobile (é de onde vem a maioria do tráfego hoje)." },
+  { title: "SEO técnico incluso", desc: "Estrutura de headings, meta tags, dados estruturados (schema.org) e velocidade de carregamento — configurados desde o primeiro dia, não como 'extra' depois." },
+  { title: "Integração com WhatsApp", desc: "Botões de contato e formulários conectados direto ao seu atendimento, sem fricção entre o clique e a conversa." },
+  { title: "Painel de fácil edição", desc: "Você consegue atualizar textos, imagens e informações de contato sozinho, sem abrir chamado técnico pra cada mudança pequena." },
+  { title: "Suporte pós-entrega", desc: "Acompanhamento depois do lançamento pra ajustes, dúvidas e evolução — a entrega não é o fim do relacionamento." },
 ];
 
 const faqItems = [
@@ -42,6 +53,14 @@ const faqItems = [
   {
     q: "Quanto tempo leva para o site ficar pronto?",
     a: "Em média, entre 15 e 25 dias úteis, dependendo da quantidade de páginas e do tempo de retorno com o conteúdo e aprovações.",
+  },
+  {
+    q: "Preciso já ter os textos e imagens prontos?",
+    a: "Ajuda, mas não é obrigatório. Podemos te orientar sobre o que escrever, e ajustamos o cronograma conforme o ritmo de retorno do material.",
+  },
+  {
+    q: "O site inclui e-mail profissional e hospedagem?",
+    a: "A hospedagem está inclusa no projeto. E-mail profissional pode ser configurado junto — é só alinhar durante o diagnóstico inicial.",
   },
 ];
 
@@ -69,6 +88,7 @@ export default function DesenvolvimentoDeSites() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <section className="hero">
         <div className="container">
           <div className="service-icon-badge reveal"><IconSite size={40} /></div>
@@ -85,11 +105,37 @@ export default function DesenvolvimentoDeSites() {
               Solicitar orçamento do meu site
             </a>
           </div>
-          <TrajectoryLine labels={["Briefing", "Design", "Desenvolvimento", "SEO & Lançamento"]} />
         </div>
       </section>
 
+      <PromoStrip
+        text="🎁 Feche a criação do seu site esse mês e leve 3 meses de gestão de tráfego pago de bônus."
+        ctaLabel="Quero aproveitar"
+        href={whatsappLink("Olá! Vi a promoção de site + 3 meses de tráfego pago de bônus e quero aproveitar.")}
+      />
+
       <section>
+        <div className="container">
+          <div className="eyebrow">Isso é pra você se...</div>
+          <h2 className="section-title reveal">Sinais de que seu site precisa de atenção</h2>
+          <p className="section-sub reveal">
+            Se pelo menos 2 desses pontos fazem sentido pra sua empresa, vale a conversa.
+          </p>
+          <div className="pain-grid">
+            {signals.map((s) => (
+              <div className="pain-item reveal" key={s}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+                <p>{s}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="light-section">
         <div className="container">
           <div className="eyebrow">O que está incluso</div>
           <h2 className="section-title reveal">Um site completo, não uma página solta</h2>
@@ -109,6 +155,53 @@ export default function DesenvolvimentoDeSites() {
         </div>
       </section>
 
+      <section>
+        <div className="container">
+          <div className="eyebrow">Como funciona</div>
+          <h2 className="section-title reveal">O passo a passo do seu projeto</h2>
+          <p className="section-sub reveal">
+            Nada de "manda o briefing e desaparece" — cada etapa tem entrega e aprovação sua antes de avançar.
+          </p>
+          <ul className="process-list">
+            <li>
+              <span className="num">01</span>
+              <div className="txt">
+                <h4>Briefing e diagnóstico</h4>
+                <p>Entendemos seu objetivo, público-alvo, concorrência e as palavras-chave que fazem sentido buscar você.</p>
+              </div>
+            </li>
+            <li>
+              <span className="num">02</span>
+              <div className="txt">
+                <h4>Arquitetura e estrutura</h4>
+                <p>Definimos quais páginas existem, como se conectam e qual a jornada que o visitante deve percorrer até o contato.</p>
+              </div>
+            </li>
+            <li>
+              <span className="num">03</span>
+              <div className="txt">
+                <h4>Design visual</h4>
+                <p>Aplicamos sua identidade num layout exclusivo — você aprova o visual antes da gente programar qualquer linha de código.</p>
+              </div>
+            </li>
+            <li>
+              <span className="num">04</span>
+              <div className="txt">
+                <h4>Desenvolvimento e testes</h4>
+                <p>Construção responsiva com testes em diferentes dispositivos e navegadores antes de qualquer coisa ir ao ar.</p>
+              </div>
+            </li>
+            <li>
+              <span className="num">05</span>
+              <div className="txt">
+                <h4>SEO técnico e lançamento</h4>
+                <p>Configuração de meta tags, dados estruturados e envio ao Google Search Console — seu site nasce pronto pra ser encontrado.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section className="light-section">
         <div className="container">
           <div className="eyebrow">F.A.Q. — Criação de Sites</div>
@@ -119,12 +212,23 @@ export default function DesenvolvimentoDeSites() {
 
       <section>
         <div className="container" style={{ textAlign: "center" }}>
-          <h2 className="section-title reveal" style={{ margin: "0 auto 28px", textAlign: "center" }}>
+          <h2 className="section-title reveal" style={{ margin: "0 auto 20px", textAlign: "center" }}>
             Vamos tirar o site da sua empresa do papel
           </h2>
+          <p className="section-sub reveal" style={{ margin: "0 auto 28px", textAlign: "center" }}>
+            Diagnóstico inicial gratuito — sem compromisso.
+          </p>
           <a href={whatsappLink("Olá! Quero criar um site profissional para minha empresa.")} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Falar com um especialista
           </a>
+          <div className="cross-link-row" style={{ justifyContent: "center", marginTop: 40 }}>
+            <Link href="/lojas-virtuais" className="btn-ghost" style={{ position: "relative", display: "inline-flex" }}>
+              Também vende produtos? Veja Lojas Virtuais<span className="underline" />
+            </Link>
+            <Link href="/gestao-de-trafego-pago" className="btn-ghost" style={{ position: "relative", display: "inline-flex" }}>
+              Quer atrair visitas? Veja Tráfego Pago<span className="underline" />
+            </Link>
+          </div>
         </div>
       </section>
     </>

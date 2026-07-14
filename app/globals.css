@@ -101,12 +101,12 @@ section {
   display: inline-block;
   flex-shrink: 0;
 }
-.light-section .eyebrow,
-.light-section .eyebrow::before {
+.light-section .eyebrow {
   color: #12140f;
+}
+.light-section .eyebrow::before {
   background: #12140f;
 }
-
 .section-title {
   font-size: clamp(28px, 4vw, 40px);
   margin-bottom: 16px;
@@ -1088,4 +1088,64 @@ section {
 }
 .banner-dot.active {
   background: var(--lime);
+}
+.promo-strip {
+  background: var(--lime-dim);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+}
+.promo-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.promo-strip-inner p {
+  font-size: 15px;
+  color: var(--text);
+  max-width: 640px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 700px) {
+  .pain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.pain-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
+.pain-item svg {
+  flex-shrink: 0;
+  color: var(--lime);
+  margin-top: 2px;
+}
+.pain-item p {
+  font-size: 14.5px;
+  color: var(--text);
+  margin: 0;
+}
+.light-section .pain-item {
+  background: #ffffff;
+  border-color: var(--line-light);
+}
+
+.cross-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
